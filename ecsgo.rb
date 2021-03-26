@@ -11,19 +11,15 @@ class Ecsgo < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.1/ecsgo_Darwin_x86_64.tar.gz"
-    sha256 "5bf8618e8b5df4a4041ac9ada47cef05839be3f990cf1bbc9dd80393b53d0774"
+    sha256 "12711847e1ff314c616a0b52fde6434ea6e9af6d820815f511e56b76f5e58a5d"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.1/ecsgo_Linux_x86_64.tar.gz"
-    sha256 "0b518d9e5804805240a50d90f1cc56cd3611fb40f7cae7d6b254507bfe1f2027"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.1/ecsgo_Linux_armv6.tar.gz"
-    sha256 "5b9fb482041879729df83167df81cee1616280b667bccfe67368989ff2a6785e"
+    sha256 "6515d82485bc5b3e49c521b5a5329cc3f4d795c2348f981615e18de808d68360"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.1/ecsgo_Linux_arm64.tar.gz"
-    sha256 "6aa6ba76c782e7615783074e8f3bc6447ad4048275a8001d3c41eb87c275ded3"
+    sha256 "8d0b18047896928723459adda84bc57565d2d5486546ac69cd58141c99dc456e"
   end
 
   depends_on "go"
