@@ -5,25 +5,25 @@
 class Ecsgo < Formula
   desc "Interactive CLI tool which acts as a wrapper around the ECS ExecuteCommand API."
   homepage ""
-  version "0.1.3"
+  version "0.2.0"
   license "Apache2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.3/ecsgo_Darwin_x86_64.tar.gz"
-    sha256 "2a95e32e0de741dd2e477641879088c6d8f0e0650b17b404426f1ecb6574caeb"
+    url "https://github.com/tedsmitt/ecsgo/releases/download/0.2.0/ecsgo_Darwin_x86_64.tar.gz"
+    sha256 "a7dd798605b8ecc6534d746f9c879136a46a37a838fe0cf4d1d1f3e8ac82d56c"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.3/ecsgo_Darwin_arm64.tar.gz"
-    sha256 "bbfaf185aa152f4a7b7a3f86d8443c58b1ff4e56a14be840f698903d57c2f1ca"
+    url "https://github.com/tedsmitt/ecsgo/releases/download/0.2.0/ecsgo_Darwin_arm64.tar.gz"
+    sha256 "213369f25b19cb0d90fdd0a697815c352d5bd2c277a3259a1bdc98d960375ea5"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.3/ecsgo_Linux_x86_64.tar.gz"
-    sha256 "7cf3ce66756192123f24dece5a68a0e2761ac42c17405985843a8679e3743354"
+    url "https://github.com/tedsmitt/ecsgo/releases/download/0.2.0/ecsgo_Linux_x86_64.tar.gz"
+    sha256 "9e60f391a5e4fd7c05a08d74c2426b665c8815a26029bd5a16d3d4e11509b5c9"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tedsmitt/ecsgo/releases/download/0.1.3/ecsgo_Linux_arm64.tar.gz"
-    sha256 "b0b62f7a190a860dd2a29de69e3d9bd6e930b3e2e46b629eadf1c0fa549f0e7f"
+    url "https://github.com/tedsmitt/ecsgo/releases/download/0.2.0/ecsgo_Linux_arm64.tar.gz"
+    sha256 "4660b1d6fbe7232d7a3fba4fdefbda0f6496ae8fb4ab5b1ebafc98f9609de3a8"
   end
 
   depends_on "go"
