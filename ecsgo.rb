@@ -6,6 +6,7 @@ class Ecsgo < Formula
   desc "Interactive CLI tool which acts as a wrapper around the ECS ExecuteCommand API."
   homepage ""
   version "0.2.0"
+  license "Apache2"
 
   on_macos do
     if Hardware::CPU.arm?
@@ -43,5 +44,11 @@ class Ecsgo < Formula
         bin.install "ecsgo"
       end
     end
+  end
+  
+   depends_on "go"
+
+  test do
+    system "#{bin}/goreleaser -v"
   end
 end
