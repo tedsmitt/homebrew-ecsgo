@@ -13,7 +13,7 @@ class Ecsgo < Formula
       sha256 "213369f25b19cb0d90fdd0a697815c352d5bd2c277a3259a1bdc98d960375ea5"
 
       def install
-        bin.install "gossm"
+        bin.install "ecsgo"
       end
     end
     if Hardware::CPU.intel?
@@ -21,7 +21,7 @@ class Ecsgo < Formula
       sha256 "a7dd798605b8ecc6534d746f9c879136a46a37a838fe0cf4d1d1f3e8ac82d56c"
 
       def install
-        bin.install "gossm"
+        bin.install "ecsgo"
       end
     end
   end
@@ -32,7 +32,7 @@ class Ecsgo < Formula
       sha256 "4660b1d6fbe7232d7a3fba4fdefbda0f6496ae8fb4ab5b1ebafc98f9609de3a8"
 
       def install
-        bin.install "gossm"
+        bin.install "ecsgo"
       end
     end
     if Hardware::CPU.intel?
@@ -40,7 +40,7 @@ class Ecsgo < Formula
       sha256 "9e60f391a5e4fd7c05a08d74c2426b665c8815a26029bd5a16d3d4e11509b5c9"
 
       def install
-        bin.install "gossm"
+        bin.install "ecsgo"
       end
     end
   end
