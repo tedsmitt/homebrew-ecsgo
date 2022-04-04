@@ -5,21 +5,21 @@
 class Ecsgo < Formula
   desc "Interactive CLI tool which acts as a wrapper around the ECS ExecuteCommand API."
   homepage ""
-  version "0.3.0"
+  version "0.4.0"
   license "Apache2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.3.0/ecsgo_Darwin_arm64.tar.gz"
-      sha256 "f68915f090fcce012cfa479526b84e381d7770db329251afb9ee2433da21d992"
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.0/ecsgo_Darwin_arm64.tar.gz"
+      sha256 "c18e5a5474678aec1ed721d9c2a0c47381a3c1a2d88842d20976b827e043df28"
 
       def install
         bin.install "ecsgo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.3.0/ecsgo_Darwin_x86_64.tar.gz"
-      sha256 "24278ab8eafd0342d5e64acb384bfc41b5f819545a5e0e94b48c3891e32bfa01"
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.0/ecsgo_Darwin_x86_64.tar.gz"
+      sha256 "d4ef5a2de1a525550e05a6ba78308d01fda317c4595b5f5a17cb47a7d314ef6b"
 
       def install
         bin.install "ecsgo"
@@ -29,16 +29,16 @@ class Ecsgo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.3.0/ecsgo_Linux_x86_64.tar.gz"
-      sha256 "cd96d11529df6387f310ad43b65dd5437da60c044ec5ba8862df62b06ae7e5b4"
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.0/ecsgo_Linux_x86_64.tar.gz"
+      sha256 "c6ae2ca0864e3b1f9ee2651499c4b2579d7be295877aa99a1d4c52f245a97c95"
 
       def install
         bin.install "ecsgo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.3.0/ecsgo_Linux_arm64.tar.gz"
-      sha256 "56032fbd6e1a44a8fa52b206d578b72712ec966fa5229bd2340d01bb6e12777f"
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.0/ecsgo_Linux_arm64.tar.gz"
+      sha256 "281f214e4fe64a42bef5106c8e43c44140b0e422db5d2765e3b1df7c2bb130d7"
 
       def install
         bin.install "ecsgo"
