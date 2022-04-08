@@ -11,7 +11,7 @@ class Ecsgo < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Darwin_arm64.tar.gz"
-      sha256 "88127953426689951100ddafdbe248560147e59a2285dbdb0b5b9871c0d7d220"
+      sha256 "f5b8f28871fd1b30ecb3c5b2bdcc0300b3d03ee17c10579d9292d68555e4eee8"
 
       def install
         bin.install "ecsgo"
@@ -19,7 +19,7 @@ class Ecsgo < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Darwin_x86_64.tar.gz"
-      sha256 "15cd44a0a319217b32d9eb5ca7d9bbda1d7065fa9de4e4f81c33cf797fd55e90"
+      sha256 "f580b6d3197ca4b2ea6516051c35dd2f681ada4935d6a16caff53f0e184fd28e"
 
       def install
         bin.install "ecsgo"
@@ -30,7 +30,7 @@ class Ecsgo < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Linux_x86_64.tar.gz"
-      sha256 "1bb6a92f674d6a239e0800adf69924b316039cef55be6c33f2d6af95a08fd33f"
+      sha256 "9b857003e31db66b74b867c8bf0e59c1326f68d203366ba128b91c12bbfe16ae"
 
       def install
         bin.install "ecsgo"
@@ -38,7 +38,7 @@ class Ecsgo < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Linux_arm64.tar.gz"
-      sha256 "38e8ff010180aba26ab9fab6e8c047c42d480fa0b049dea7e1e95f2d88793972"
+      sha256 "a37a42b23c20703785f33104bd04690a2edfbf3a58eec58ac8f848302c4336db"
 
       def install
         bin.install "ecsgo"
