@@ -5,21 +5,23 @@
 class Ecsgo < Formula
   desc "Interactive CLI tool which acts as a wrapper around the ECS ExecuteCommand API."
   homepage ""
-  version "0.4.2"
+  version "0.4.3"
   license "Apache2"
+
+  depends_on "go"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Darwin_arm64.tar.gz"
-      sha256 "f5b8f28871fd1b30ecb3c5b2bdcc0300b3d03ee17c10579d9292d68555e4eee8"
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.3/ecsgo_Darwin_arm64.tar.gz"
+      sha256 "2addf280e6de876da70a386b7029954ff2e85c810f85dd8c3aa1588ef840d9d6"
 
       def install
         bin.install "ecsgo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Darwin_x86_64.tar.gz"
-      sha256 "f580b6d3197ca4b2ea6516051c35dd2f681ada4935d6a16caff53f0e184fd28e"
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.3/ecsgo_Darwin_x86_64.tar.gz"
+      sha256 "0aa6de728ad0572f1716f787657b0dc8714e34c532a0eb7050430e3a6c4737eb"
 
       def install
         bin.install "ecsgo"
@@ -28,25 +30,23 @@ class Ecsgo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Linux_x86_64.tar.gz"
-      sha256 "9b857003e31db66b74b867c8bf0e59c1326f68d203366ba128b91c12bbfe16ae"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.3/ecsgo_Linux_arm64.tar.gz"
+      sha256 "e3c3b49978245171d75409c1f37f0ffe3274cbe80375fe6bc909989be2101df7"
 
       def install
         bin.install "ecsgo"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.2/ecsgo_Linux_arm64.tar.gz"
-      sha256 "a37a42b23c20703785f33104bd04690a2edfbf3a58eec58ac8f848302c4336db"
+    if Hardware::CPU.intel?
+      url "https://github.com/tedsmitt/ecsgo/releases/download/0.4.3/ecsgo_Linux_x86_64.tar.gz"
+      sha256 "54fb7de31c4dc1d0b0cc176fadc09fa199e19641352cc02ce972d9098b3178d6"
 
       def install
         bin.install "ecsgo"
       end
     end
   end
-
-  depends_on "go"
 
   test do
     system "#{bin}/goreleaser -v"
