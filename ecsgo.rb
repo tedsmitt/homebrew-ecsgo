@@ -5,21 +5,21 @@
 class Ecsgo < Formula
   desc "Interactive CLI tool which acts as a wrapper around the ECS ExecuteCommand API."
   homepage ""
-  version "0.5.0"
+  version "0.6.0"
   license "Apache2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/v0.5.0/ecsgo_Darwin_arm64.tar.gz"
-      sha256 "5584a40a53c69a3a52de98be6ad73d6e35178a4bb9fd097149c3f992dc616f9d"
+    on_intel do
+      url "https://github.com/tedsmitt/ecsgo/releases/download/v0.6.0/ecsgo_Darwin_x86_64.tar.gz"
+      sha256 "56f35261200dd7f4104d02288a359ea638ec8d2904474cb54689f089da693409"
 
       def install
         bin.install "ecsgo"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/v0.5.0/ecsgo_Darwin_x86_64.tar.gz"
-      sha256 "19e35e49d71754e80ac4fd727dd45f33a9a609f103cb8c9887ff08f4b4993e89"
+    on_arm do
+      url "https://github.com/tedsmitt/ecsgo/releases/download/v0.6.0/ecsgo_Darwin_arm64.tar.gz"
+      sha256 "596b85121a76fe1bf6f8e6c0ed3c0564e583cdeeacf76a3d84dceb66ef2d08c0"
 
       def install
         bin.install "ecsgo"
@@ -28,20 +28,24 @@ class Ecsgo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/v0.5.0/ecsgo_Linux_arm64.tar.gz"
-      sha256 "639d9562a969ffd7eedf2d944eb4fe0f496a28ec196bf966acae34e64ff1e1b0"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/tedsmitt/ecsgo/releases/download/v0.6.0/ecsgo_Linux_x86_64.tar.gz"
+        sha256 "6a3577d0508ca61760f3f5060a2bb38eb552bab23890d798859b179ae4c373a7"
 
-      def install
-        bin.install "ecsgo"
+        def install
+          bin.install "ecsgo"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/tedsmitt/ecsgo/releases/download/v0.5.0/ecsgo_Linux_x86_64.tar.gz"
-      sha256 "3f0d0e09751d52f79e8e70eea78824aea1a3ea205c82fb18fa04f752295180af"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/tedsmitt/ecsgo/releases/download/v0.6.0/ecsgo_Linux_arm64.tar.gz"
+        sha256 "a58be2fb4be472c08253adfa056874fd8fe901666136419ef2e076045625b653"
 
-      def install
-        bin.install "ecsgo"
+        def install
+          bin.install "ecsgo"
+        end
       end
     end
   end
